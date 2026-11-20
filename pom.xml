@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Parent POM contains all general settings for building and releasing of all JEAF projects. -->
+	<parent>
+		<groupId>com.anaptecs.jeaf</groupId>
+		<artifactId>jeaf-project-parent</artifactId>
+		<version>2.2.0</version>
+	</parent>
+
+	<groupId>com.anaptecs.jeaf.uml2libs</groupId>
+	<artifactId>jeaf-uml2libs-project</artifactId>
+	<version>5.6.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>JEAF UML2 Libraries Project</name>
+	<description>Eclipse UML2 runtime as used by JEAF Generator. Based on Eclipse UML2 5.6.1, built with Maven.</description>
+	<url>https://github.com/anaptecs/jeaf-uml2libs</url>
+
+	<!-- Code is based on Eclipse UML2 and therefore licensed under Eclipse Public License 2.0. -->
+	<licenses>
+		<license>
+			<name>Eclipse Public License - v 2.0</name>
+			<url>https://www.eclipse.org/legal/epl-2.0/</url>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:https://github.com/anaptecs/jeaf-uml2libs.git</connection>
+		<developerConnection>scm:git:https://github.com/anaptecs/jeaf-uml2libs.git</developerConnection>
+		<url>https://github.com/anaptecs/jeaf-uml2libs</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<!-- Snapshots are deployed to GitHub Packages of this repository (not the one of the parent POM). -->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/anaptecs/jeaf-uml2libs</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<modules>
+		<module>uml2-common</module>
+		<module>uml2-types</module>
+		<module>uml2-uml</module>
+		<module>uml2-uml-profile-standard</module>
+		<module>uml2-uml-resources</module>
+	</modules>
+
+	<properties>
+		<!-- EMF (Maven Central) -->
+		<emf.common.version>2.46.0</emf.common.version>
+		<emf.ecore.version>2.43.0</emf.ecore.version>
+		<emf.ecore.xmi.version>2.41.0</emf.ecore.xmi.version>
+		<emf.ecore2xml.version>2.14.0</emf.ecore2xml.version>
+		<!-- Eclipse platform, only needed within Eclipse (optional) -->
+		<eclipse.core.runtime.version>3.34.0</eclipse.core.runtime.version>
+
+		<!-- Javadoc of the original Eclipse code doesn't pass doclint. -->
+		<doclint>none</doclint>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.anaptecs.jeaf.uml2libs</groupId>
+				<artifactId>uml2-common</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.anaptecs.jeaf.uml2libs</groupId>
+				<artifactId>uml2-types</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.anaptecs.jeaf.uml2libs</groupId>
+				<artifactId>uml2-uml</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.anaptecs.jeaf.uml2libs</groupId>
+				<artifactId>uml2-uml-profile-standard</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.eclipse.emf</groupId>
+				<artifactId>org.eclipse.emf.common</artifactId>
+				<version>${emf.common.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.emf</groupId>
+				<artifactId>org.eclipse.emf.ecore</artifactId>
+				<version>${emf.ecore.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.emf</groupId>
+				<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
+				<version>${emf.ecore.xmi.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.emf</groupId>
+				<artifactId>org.eclipse.emf.mapping.ecore2xml</artifactId>
+				<version>${emf.ecore2xml.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.eclipse.platform</groupId>
+				<artifactId>org.eclipse.core.runtime</artifactId>
+				<version>${eclipse.core.runtime.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

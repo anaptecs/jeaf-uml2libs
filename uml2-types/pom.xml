@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.anaptecs.jeaf.uml2libs</groupId>
+		<artifactId>jeaf-uml2libs-project</artifactId>
+		<version>5.6.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>uml2-types</artifactId>
+	<name>JEAF UML2 Libraries - Types</name>
+	<description>Primitive types of Eclipse UML2 (org.eclipse.uml2.types 2.6.0).</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.anaptecs.jeaf.uml2libs</groupId>
+			<artifactId>uml2-common</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.emf</groupId>
+			<artifactId>org.eclipse.emf.ecore</artifactId>
+		</dependency>
+		<!-- Only needed when running within Eclipse. -->
+		<dependency>
+			<groupId>org.eclipse.platform</groupId>
+			<artifactId>org.eclipse.core.runtime</artifactId>
+			<optional>true</optional>
+		</dependency>
+	</dependencies>
+</project>
