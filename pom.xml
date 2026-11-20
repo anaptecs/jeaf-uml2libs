@@ -55,7 +55,7 @@
 		<emf.ecore.xmi.version>2.41.0</emf.ecore.xmi.version>
 		<emf.ecore2xml.version>2.14.0</emf.ecore2xml.version>
 		<!-- Eclipse platform, only needed within Eclipse (optional) -->
-		<eclipse.core.runtime.version>3.34.0</eclipse.core.runtime.version>
+		<eclipse.core.runtime.version>3.35.0</eclipse.core.runtime.version>
 
 		<!-- Javadoc of the original Eclipse code doesn't pass doclint. -->
 		<doclint>none</doclint>
